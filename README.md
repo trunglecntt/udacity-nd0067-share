@@ -1,7 +1,7 @@
 # udacity-nd0067-share
 My thoughts on working with udacity project (nd0067 course)
 
-## Một vài thông tin cơ bản về khóa học
+## Một vài thông tin về khóa học
 + Tên khóa học: Full Stack JavaScript Developer
 + Category: Nanodegree
 + Số project: 4
