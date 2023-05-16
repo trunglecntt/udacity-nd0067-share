@@ -19,8 +19,8 @@ bước đầu hơi khó tiếp cận đối với các bạn developer
 ## Project
 Overall tips:
 ```
-Hãy chú ý đến yêu cầu của project trước khi submit dù là nhỏ nhất, để tránh phải submit lại và tốn time review
-Project Rubric là công cụ tốt nhất để base theo đó tự đánh giá project đã meet requirement hay chưa
+- Hãy chú ý đến yêu cầu của project trước khi submit dù là nhỏ nhất, để tránh phải rework
+- Project Rubric là công cụ tốt nhất để tự đánh giá project đã meet requirements hay chưa
 ```
 
 ### 01. Project 1: Image Processing API
