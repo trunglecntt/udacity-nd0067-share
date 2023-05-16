@@ -24,15 +24,15 @@ Project Rubric là công cụ tốt nhất để base theo đó tự đánh giá
 ```
 
 ### 01. Project 1: Image Processing API
-+ Description: Ở project này, bạn sẽ bước đầu xây dựng một NodeJS project cơ bản (sử dụng TypeScript).
+:white_check_mark: Description: Ở project này, bạn sẽ bước đầu xây dựng một NodeJS project cơ bản (sử dụng TypeScript).
 Đây là project backend cung cấp xử lý API với NodeJS. Cụ thể bạn sẽ tạo API crop ảnh, cho phép người dùng nhập thông tin trên URL trình duyệt (gồm tên ảnh, size) và trả về ảnh kết quả
-+ Starter code: Không (bạn sẽ phải xây dựng project từ đầu)
-+ Đánh giá: Mặc dù xử lý Back-end không có gì phức tạp, nhưng cần lưu ý đến những thành phần nhỏ nhất cấu thành
-nên project (vì đây là mục tiêu của project) như: project dependencies, npm scripts, kiểu dữ liệu trong TypeScript...
-+ Tips:
-:white_check_mark: Bạn cần lưu ý đến npm script, bao gồm `start`, `build`, `test`, `lint`, `format`. Trong đó `lint` là script sử dụng `eslint` và `format` là script sử dụng `prettier` để tối ưu code convention.
+<br/>
+:white_check_mark: Starter code: Không (bạn sẽ phải xây dựng project từ đầu)
+<br/>
+:white_check_mark: Đánh giá: Mặc dù xử lý Back-end không có gì phức tạp, nhưng cần lưu ý đến những thành phần nhỏ nhất cấu thành nên project (vì đây là mục tiêu của project) như: project dependencies, npm scripts, kiểu dữ liệu trong TypeScript...
+<br/>
+:white_check_mark: Tips:
+- Bạn cần lưu ý đến npm script, bao gồm `start`, `build`, `test`, `lint`, `format`. Trong đó `lint` là script sử dụng `eslint` và `format` là script sử dụng `prettier` để tối ưu code convention.
 Thiếu một trong các thành phần này thì project sẽ phải submit lại để review
-<br/>
-:white_check_mark: Khi nhập cùng tham số (tên ảnh, size) với ảnh đã được tạo thì sẽ lấy ảnh trực tiếp từ storage mà không xử lý resize ảnh lại từ đầu (cache image)
-<br/>
-:white_check_mark: Sử dụng `nodemon` để serve trực tiếp `.ts` file và reload browser khi có thay đổi
+- Khi nhập cùng tham số (tên ảnh, size) với ảnh đã được tạo thì sẽ lấy ảnh trực tiếp từ storage mà không xử lý resize ảnh lại từ đầu (cache image)
+- Sử dụng `nodemon` để serve trực tiếp `.ts` file và reload browser khi có thay đổi
