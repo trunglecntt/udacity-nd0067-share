@@ -9,12 +9,10 @@ My thoughts on working with udacity project (nd0067 course)
 
 
 ## Đánh giá cơ bản
-+ Khóa học tương tác nhiều với JavaScript (TypeScript) và tập trung các kiến thức liên quan đến việc phát triển
-ứng dụng web dạng fullstack (đi từ Front-End, Back-End đến Deployment / CICD).
++ Khóa học tương tác nhiều với JavaScript (TypeScript) và tập trung các kiến thức liên quan đến việc phát triển ứng dụng web dạng fullstack (đi từ Front-End, Back-End đến Deployment / CICD).
 + Mức độ khó: Intermediate.
 + Độ khó của mỗi project sẽ tăng dần (theo quan điểm cá nhân).
-+ Riêng project cuối liên quan đến devops nên có thể
-bước đầu hơi khó tiếp cận đối với các bạn developer
++ Riêng project cuối liên quan đến devops nên có thể bước đầu hơi khó tiếp cận đối với các bạn developer
 
 ## Project
 Overall tips:
@@ -35,10 +33,10 @@ Không (bạn sẽ phải xây dựng project từ đầu)
 Mặc dù xử lý Back-end không có gì phức tạp, nhưng cần lưu ý đến những thành phần nhỏ nhất cấu thành nên project (vì đây là mục tiêu của project) như: project dependencies, npm scripts, kiểu dữ liệu trong TypeScript...
 <br/>
 :white_check_mark: **Tips:**
-- Bạn cần lưu ý đến npm script, bao gồm `start`, `build`, `test`, `lint`, `format`. Trong đó `lint` là script sử dụng `eslint` và `format` là script sử dụng `prettier` để tối ưu code convention.
-Thiếu một trong các thành phần này thì project sẽ phải submit lại để review
-- Khi nhập cùng tham số (tên ảnh, size) với ảnh đã được tạo thì sẽ lấy ảnh trực tiếp từ storage mà không xử lý resize ảnh lại từ đầu (cache image)
+- Bạn cần lưu ý đến npm script, bao gồm `start`, `build`, `test`, `lint`, `format`. Trong đó `lint` là script sử dụng `eslint` và `format` là script sử dụng `prettier` để tối ưu code convention. Thiếu một trong các thành phần này thì project sẽ phải submit lại để review
+- Khi nhập cùng tham số (tên ảnh, size) với ảnh đã được tạo thì sẽ lấy ảnh trực tiếp từ storage mà không xử lý resize ảnh lại từ đầu (cache image) => Như vậy tên ảnh sau khi xử lý cần có format riêng (Ví dụ: `[name]-[width]-[height].png`)
 - Sử dụng `nodemon` để serve trực tiếp `.ts` file và reload browser khi có thay đổi. Không cần compile TypeScript rồi mới chạy
+- Sử dụng thư viện `sharp` với method `resize` và `toFile` (thư viện được Udacity suggest). Mình thấy đây là cách đơn giản và hiệu quả nhất
 <br/>
 
 ### 02. Project 2: Storefront Backend
@@ -49,12 +47,11 @@ Thiếu một trong các thành phần này thì project sẽ phải submit lạ
 Không (bạn sẽ phải xây dựng project từ đầu)
 <br/>
 :white_check_mark: **Đánh giá:**
-Việc xử lý Back-End từ tạo database đến API khá quen thuộc với các developer, nhưng ở phần viết test sẽ hơi khó tiếp cận vì phải đảm bảo dữ liệu test được tách riêng ra database và không ảnh hưởng đến phần khác
+Việc xử lý Back-End từ tạo database đến API khá quen thuộc với các developer, nhưng ở phần viết test sẽ hơi khó tiếp cận vì phải đảm bảo dữ liệu test được tách riêng ra một database và không ảnh hưởng đến phần khác
 <br/>
 :white_check_mark: **Tips:**
-- Cần chú ý đến việc thiết kế kiểu dữ liệu cho mỗi column trong table. Ví dụ như kiểu dữ liệu về giá, mặc dù đã thiết kế dạng decimal/numberic nhưng khi API get dữ liệu về sẽ convert giá trị về string
-- Có một số npm script phức tạp mà các exercise đưa ra khi run thực tế sẽ không chạy.
-Như npm script phục vụ test thì bạn nên migrate database trước, sau đó chạy test và cuối cùng là roll back database (dù test pass hay fail). Tham khảo:
+- Cần chú ý đến việc thiết kế kiểu dữ liệu cho mỗi column trong table. Ví dụ như kiểu dữ liệu về giá, mặc dù đã thiết kế dạng decimal/numberic nhưng khi API get dữ liệu về sẽ convert giá trị về string => Suggest thiết kế kiểu `integer` hoặc cast column type trước khi trả về dữ liệu
+- Có một số npm script phức tạp mà các exercise đưa ra khi run thực tế sẽ không chạy. Như npm script phục vụ test thì bạn nên migrate database trước, sau đó chạy test và cuối cùng là roll back database (dù test pass hay fail). Tham khảo:
 ```
 export APP_ENV=test && db-migrate --env test up && npm run jasmine; db-migrate --env test reset
 ```
@@ -70,7 +67,7 @@ Sau project về Back-End, bạn sẽ được triển khai một project Front-
 Có (base trên Angular framework, tuy nhiên chỉ cung cấp folder chứa các component và CSS tương ứng)
 <br/>
 :white_check_mark: **Đánh giá:**
-Project sẽ hơi tốn time ở bước xây dựng UI, nhưng ở bước implement xử lý các sự kiện sẽ đỡ tốn effort hơn. Project cũng check tuân thủ code convention chặt chẽ hơn các project trước, nên bạn cần follow udacity frontend code ngay từ đầu để giảm thiểu thời gian re-work
+Project sẽ hơi tốn time ở bước xây dựng UI, nhưng ở bước implement xử lý các sự kiện sẽ đỡ tốn effort hơn. Project cũng check tuân thủ code convention chặt chẽ hơn các project trước, nên bạn cần follow udacity frontend code convention ngay từ đầu để giảm thiểu thời gian re-work
 <br/>
 :white_check_mark: **Tips:**
 - Sử dụng (change) và (ngOnChange) event binding trong cả project, vì đây là yêu cầu trước khi submit
@@ -87,11 +84,10 @@ Một project về CI/CD cho ứng dụng fullstack. Nghĩa là trong repository
 Có (cần thêm, sửa project hiện tại để đáp ứng requirement)
 <br/>
 :white_check_mark: **Đánh giá:**
-Nếu chưa tiếp xúc với CICD/devops thì quá trình implement project sẽ gặp khá nhiều khó khăn, phải research thường xuyên mỗi khi deploy ứng dụng fail. Việc hoàn thiện config trên CircleCI thì dễ dàng hơn vì các script build, deploy
-đã được cung cấp từ trước
+Nếu chưa tiếp xúc với CICD/devops thì quá trình implement project sẽ gặp khá nhiều khó khăn, phải research thường xuyên mỗi khi deploy ứng dụng fail. Việc hoàn thiện config trên CircleCI thì dễ dàng hơn vì các script build, deploy đã được cung cấp từ trước
 <br/>
 :white_check_mark: **Tips:**
 - Project description cần đầy đủ các thành phần mô tả CICD workflow của bạn hoạt động chính xác (thư mục `docs` và `screenshots`)
 - Nên tuân thủ về security đối với các environment variable. Ví dụ như đã setup trên CircleCI project config rồi thì bên trong Elastic Beanstalk không cần config nữa, mà sẽ set thông qua EB CLI (ở npm `deploy` script)
 - Về các sơ đồ bên mà project yêu cầu, bạn có thể sử dụng draw.io để vẽ trực tiếp trên web `https://app.diagrams.net` hoặc các app khác như Cacoo, Lucidchart...
-- Bên trong npm script project cung cấp không phải đã chính xác hoàn toàn. Bạn cần sửa đổi script `start` để khi run trên Elastic Beanstalk không gặp lỗi. Các script khác về cơ bản đã deploy được ứng dụng.
+- Bên trong npm script project cung cấp không phải đã chính xác hoàn toàn. Bạn cần sửa đổi script `start` để khi run trên Elastic Beanstalk không gặp lỗi (cho đến khi status môi trường OK). Các script khác về cơ bản đã deploy được ứng dụng.
