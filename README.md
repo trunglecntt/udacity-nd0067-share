@@ -14,7 +14,7 @@ My thoughts on working with udacity project (nd0067 course)
 + Độ khó của mỗi project sẽ tăng dần (theo quan điểm cá nhân).
 + Riêng project cuối liên quan đến devops nên có thể bước đầu hơi khó tiếp cận đối với các bạn developer
 
-## Project
+## Projects
 Overall tips:
 ```
 - Hãy chú ý đến yêu cầu của project trước khi submit dù là nhỏ nhất, để tránh phải rework
@@ -37,6 +37,7 @@ Mặc dù xử lý Back-end không có gì phức tạp, nhưng cần lưu ý đ
 - Khi nhập cùng tham số (tên ảnh, size) với ảnh đã được tạo thì sẽ lấy ảnh trực tiếp từ storage mà không xử lý resize ảnh lại từ đầu (cache image) => Như vậy tên ảnh sau khi xử lý cần có format riêng (Ví dụ: `[name]-[width]-[height].png`)
 - Sử dụng `nodemon` để serve trực tiếp `.ts` file và reload browser khi có thay đổi. Không cần compile TypeScript rồi mới chạy
 - Sử dụng thư viện `sharp` với method `resize` và `toFile` (thư viện được Udacity suggest). Mình thấy đây là cách đơn giản và hiệu quả nhất
+- Về phần test thì project yêu cầu ít nhất 1 test case cho function, 1 test case cho API endpoint. Phần unit test cho function thì đơn giản bạn chỉ cần truyền các tham số phù hợp vào hàm xử lý ảnh của bạn (expect sẽ là giá trị bất kỳ khác `null` như đường dẫn file ảnh), còn endpoint test thì bạn sử dụng thư viện `supertest` và thực hiện API request, expect là HTTP status code hoặc HTTP response body là được.
 <br/>
 
 ### 02. Project 2: Storefront Backend
