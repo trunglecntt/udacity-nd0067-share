@@ -58,10 +58,9 @@ export APP_ENV=test && db-migrate --env test up && npm run jasmine; db-migrate -
 ```
 - Nên phân biệt rõ ràng package nào nằm trong `dependencies` và `devDependencies` để xác định chỉ dependency nào
 được include trong môi trường production
-<br/>
-
-**Q/A** <br/>
-Author: KhoiMM - FHM.CMS
+---
+:white_check_mark: **Q/A:**
+- From: KhoiMM - FHM.CMS
 <img width="912" alt="image" src="https://github.com/trunglecntt/udacity-nd0067-share/assets/20870396/300a900e-62bf-4011-85a8-8b842949243d">
 
 
