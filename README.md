@@ -60,6 +60,11 @@ export APP_ENV=test && db-migrate --env test up && npm run jasmine; db-migrate -
 được include trong môi trường production
 <br/>
 
+**Q/A** <br/>
+Author: KhoiMM - FHM.CMS
+<img width="912" alt="image" src="https://github.com/trunglecntt/udacity-nd0067-share/assets/20870396/300a900e-62bf-4011-85a8-8b842949243d">
+
+
 ### 03. Project 3: MyStore
 :white_check_mark: **Description:**
 Sau project về Back-End, bạn sẽ được triển khai một project Front-End dạng e-commerce dựa trên Angular framework. Ứng dụng cho phép user xem các mặt hàng, chọn mỗi mặt hàng theo số lượng và đưa vào giỏ hàng để tiến hành thanh toán. Bạn chỉ cần implement logic trên UI, unit testing có thể impelement hoặc không
